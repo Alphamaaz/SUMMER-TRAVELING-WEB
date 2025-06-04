@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Hero from '../components/Heo'
+
 import WhyChoose from './../components/WhyChoose';
 import Services from '../components/Services';
 import Holiday from '../components/Holiday';
@@ -9,6 +9,7 @@ import OurClients from '../components/OurClients';
 import OurBlogs from '../components/OurBlogs';
 import Partners from '../components/Partners';
 import Footer from '../components/Footer';
+import Hero from './../components/Hero';
 
 const Home = () => {
   return (

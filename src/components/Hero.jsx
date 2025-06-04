@@ -4,11 +4,12 @@ import locationo from '../images/location.svg'
 import tpe from '../images/type.svg'
 import calendar from '../images/calendar.svg'
 import guest from '../images/guest.svg'
-import Nav from "./nav";
+
 import { ChevronRight } from "lucide-react";
 
 import TextWithShape from "./Text";
 import { Search } from "lucide-react";
+import Nav from './Nav';
 
 const Hero = () => {
     
