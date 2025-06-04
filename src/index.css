@@ -1,0 +1,40 @@
+:root {
+  font-family: open-sans ,system-ui, Avenir, Helvetica, Arial, sans-serif;
+ 
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+  --white:"#FDFDFD";
+  --primary1:"#00866B";
+  --primary2:"#FF870F";
+  --BG:"#E5E5E5";
+  --sec-text:"#929292";
+  --black:"#202020"
+}
+
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  background-color: #00866B !important;
+  opacity: 0.4;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 100;
+  margin-top: 20px;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 24px !important;
+  height: 8px !important;
+  border-radius: 9999px;
+  background-color: #00866B !important;
+}
+

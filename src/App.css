@@ -1,0 +1,32 @@
+.menu_item {
+  position: relative;
+  display: inline-block;
+  padding-left: 16px;
+  transition: padding-left 0.3s ease;
+}
+
+.menu_item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #FF870F;
+  border-radius: 9999px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show dot when hovered or active */
+.group:hover .menu_item::before,
+.menu-active .menu_item::before {
+  opacity: 1;
+}
+
+/* Slide text when hovered or active */
+.group:hover .menu_item,
+.menu-active .menu_item {
+  padding-left: 24px;
+}
