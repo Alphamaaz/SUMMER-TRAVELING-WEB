@@ -38,14 +38,17 @@ const Partners = () => {
           summer experiences.
         </p>
       </div>
-      <div className="w-full flex gap-10 justify-center items-center mx-auto ">
-        {logos.map((item, index) => {
-          return (
-            <div className="bg-[#FDFDFD] px-[40px] py-[25px] flex items-center justify-center border border-[#DEDEDE] rounded-[90px]">
+      <div className="overflow-hidden w-full">
+        <div className="marquee flex gap-10">
+          {[...logos, ...logos].map((item, index) => (
+            <div
+              key={index}
+              className="bg-[#FDFDFD] px-[40px] py-[25px] flex items-center justify-center border border-[#DEDEDE] rounded-[90px] min-w-[200px]"
+            >
               <img src={item.logo} alt="logo" className="w-[130px]" />
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );

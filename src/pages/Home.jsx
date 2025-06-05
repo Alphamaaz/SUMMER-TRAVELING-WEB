@@ -25,11 +25,6 @@ const Home = () => {
        <Partners/>
        <Footer/>
 
-
-
-        {/* <div className='px-[72px]'>
-
-        </div> */}
     </div>
   )
 }

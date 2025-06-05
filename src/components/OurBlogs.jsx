@@ -97,8 +97,8 @@ const OurBlogs = () => {
       />
       <img
         src={plane_r}
-        alt="plane"
-        className="plane absolute top-15 left-0"
+        alt="plane_left"
+        className="blogs_plane absolute top-15 left-0"
       />
     </div>
   );

@@ -31,11 +31,11 @@
       transform: translateY(40px); /* Pause */
     }
     70% {
-      transform: translate(50px, 50px);
-      -webkit-transform: translate(50px, 50px);
-      -moz-transform: translate(50px, 50px);
-      -ms-transform: translate(50px, 50px);
-      -o-transform: translate(50px, 50px);
+      transform: translate(20px, 50px);
+      -webkit-transform: translate(20px, 50px);
+      -moz-transform: translate(20px, 50px);
+      -ms-transform: translate(20px, 50px);
+      -o-transform: translate(20px, 50px);
 }
     100% {
       transform: translate(0, 0); /* Return to start */

@@ -10,8 +10,8 @@
 /* services.css */
 
 .service_shape {
-    animation: floatBottomLeft 5s ease-in-out infinite;
-    -webkit-animation: floatBottomLeft 5s ease-in-out infinite;
+    animation: floatBottomLeft 7s ease-in-out infinite;
+    -webkit-animation: floatBottomLeft 7s ease-in-out infinite;
 }
   
   @keyframes floatBottomLeft {
@@ -35,42 +35,32 @@
   }
   
   .service_shape1 {
-    animation: floatRight 5s ease-in-out infinite;
-    -webkit-animation: floatRight 5s ease-in-out infinite;
+    animation: floatRight 7s ease-in-out infinite;
+    -webkit-animation: floatRight 7s ease-in-out infinite;
+}
+  .blogs_plane {
+    animation: blogsLeft 7s ease-in-out infinite;
+    -webkit-animation: blogsLeft 7s ease-in-out infinite;
 }
 
-@keyframes floatRight {
+@keyframes blogsLeft {
     0% {
         transform: translate(0, 0);
       }
       50% {
-        transform: translate(70px, 40px);
-        -webkit-transform: translate(70px, 40px);
-        -moz-transform: translate(70px, 40px);
-        -ms-transform: translate(70px, 40px);
-        -o-transform: translate(70px, 40px);
+        transform: translate(80px, -30px);
+        -webkit-transform: translate(80px, -30px);
+        -moz-transform: translate(80px, -30px);
+        -ms-transform: translate(80px, -30px);
+        -o-transform: translate(80px, -30px);
 }
       100% {
         transform: translate(0, 0);
       }
 }
 
-@keyframes floatTopRight {
-    0% {
-      transform: translate(0, 0);
-    }
-    50% {
-      transform: translate(40px, -60px);
-    }
-    100% {
-      transform: translate(0, 0);
-    }
-  }
-  
-  .plane {
-    animation: floatTopRight 5 ease-in-out infinite;
-    -webkit-animation: floatTopRight 5 ease-in-out infinite;
-}
+
+
 
   
   @keyframes floatBalloon {
@@ -105,10 +95,10 @@
   }
   
   .ballon {
-    animation: floatBalloon 6s ease-in-out infinite;
-    -webkit-animation: floatBalloon 6s ease-in-out infinite;
+    animation: floatBalloon 8s ease-in-out infinite;
+    -webkit-animation: floatBalloon 8s ease-in-out infinite;
 }
   .balloon{
-    animation: floatBalloon2 6s ease-in-out infinite;
-    -webkit-animation: floatBalloon2 6s ease-in-out infinite;
+    animation: floatBalloon2 8s ease-in-out infinite;
+    -webkit-animation: floatBalloon2 8s ease-in-out infinite;
 }
