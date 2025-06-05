@@ -56,20 +56,20 @@ const Navbar = () => {
         </div>
         <div className="flex justify-around w-[70%]">
           <div className="flex gap-3 items-center">
-            <img src={location} alt="location" className="h-[50px] w-[50px]" />
+            <img src={location} alt="location" className="h-[45px] w-[45px]" />
             <p className="text-[18px] font-[400] text-[#929292]">
               Fifth Avenue 1001, XYZ, <br className="hidden md:inline" /> New
               York Morris Streat
             </p>
           </div>
           <div className="flex gap-3 items-center">
-            <img src={email} alt="email" className="h-[50px] w-[50px]" />
+            <img src={email} alt="email" className="h-[45px] w-[45px]" />
             <p className="text-[18px] font-[400] text-[#929292]">
               info@summertravel.com
             </p>
           </div>
           <div className="flex gap-3 items-center ">
-            <img src={phone} alt="phone" className="h-[50px] w-[50px]" />
+            <img src={phone} alt="phone" className="h-[45px] w-[45px]" />
             <p className="text-[18px] font-[400] text-[#929292]">
               012-345-678-9
             </p>

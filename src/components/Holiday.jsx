@@ -199,6 +199,7 @@ const Holiday = () => {
           transition: all 0.3s ease;
           display: inline-block !important;
           border-radius: 50%;
+          cursor:pointer
         }
 
         .custom-bullet-active {

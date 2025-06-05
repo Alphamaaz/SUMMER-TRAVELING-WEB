@@ -4,6 +4,8 @@ import img1 from '../images/offer1.jpg';
 import img2 from '../images/offer2.jpg';
 import img3 from '../images/offer3.jpg';
 import img4 from '../images/offer4.jpg';
+import line from '../images/line.svg';
+import v_line from '../images/v_line.svg';
 import CommonP from "./CommonP";
 import TextWithShape from "./Text";
 import { ChevronRight } from 'lucide-react';
@@ -39,6 +41,8 @@ const Offer = () => {
       <div>
         <div className="relative grid grid-cols-2 gap-14 max-w-[600px] mx-auto py-10 px-4 ">
           {/* Top Left Image */}
+        <img src={line} alt="line" className="w-[480px] absolute top-[50%] right-[10%]" />
+        <img src={v_line} alt="line" className="w-[2px] absolute top-[20%] right-[50%]" />
           <img
             src={img1}
             alt="Top Left"
@@ -67,10 +71,8 @@ const Offer = () => {
           />
 
           {/* Center Discount Badge */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-700 text-white w-[134px] h-[134px]  rounded-full flex  items-center justify-center ">
-
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-700 text-white w-[134px] h-[134px]  rounded-full flex  items-center justify-center z-10">
             <div className="rotation  flex  justify-center items-center rletive">
-
               <span className=" absolute text-[18px] font-[400] top-7 right-8">
                 %
               </span>
