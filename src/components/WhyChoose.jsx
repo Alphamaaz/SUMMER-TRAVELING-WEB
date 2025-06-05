@@ -36,14 +36,14 @@ const WhyChoose = () => {
 
           {/* Circular Arrow Button */}
           <div className="absolute bottom-[60px] left-[70%] transform -translate-x-1/2 w-26 h-26 bg-white border-8 border-white  rounded-full">
-            <div className="w-24 h-24 bg-white border border-dashed border-teal-400 rounded-full flex items-center justify-center shadow-md">
+            <div className="rotation1 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-md">
               <img src={arrow} alt="arrow" className="h-[30px] w-[30px]" />
             </div>
           </div>
         </div>
 
         <div className="flex-1 w-full max-w-[630px] mt-12">
-          <CommonP text={"Why We Are"} /> 
+          <CommonP text={"Why We Are"} />
           <h1 className="text-[50px] font-[400] mt-2">
             Why <TextWithShape text={" Choose"} /> US
           </h1>
@@ -89,7 +89,7 @@ const WhyChoose = () => {
 
           <div className="flex items-center gap-4 flex-wrap mt-6">
             {/* Start Booking Button */}
-            <button className="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-full font-medium flex items-center gap-2">
+            <button className="bg-green-700 hover:bg-[#FF870F] text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">
               START BOOKING
               <svg
                 className="w-4 h-4"
@@ -127,12 +127,12 @@ const WhyChoose = () => {
                 />
                 {/* Plus Icon */}
                 <div className="w-12 h-12 rounded-full bg-green-100 border-2 border-white flex items-center justify-center text-green-700 text-[30px] font-bold cursor-pointer">
-                  <Plus/>
+                  <Plus />
                 </div>
               </div>
 
               {/* Label */}
-              <div className='ml-5'>
+              <div className="ml-5">
                 <p className="text-lg font-semibold text-gray-800">2K+</p>
                 <p className="text-sm text-gray-500 -mt-1">
                   Individual Traveller

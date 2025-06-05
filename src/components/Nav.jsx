@@ -1,5 +1,6 @@
 import React from 'react'
 import { Search } from "lucide-react";
+import "../styles/footer.css"
 const Nav = () => {
     const menuItems = [
           "HOME",
@@ -15,10 +16,20 @@ const Nav = () => {
         {menuItems.map((item, index) => (
           <li
             key={index}
-            className="relative text-white hover:text-orange-500 transition-all duration-200 pl-1 hover:pl-3"
+            className={`relative group ${
+              index === 0
+                ? "text-orange-500"
+                : "text-white hover:text-orange-500"
+            } transition-all duration-300 pl-3 cursor-pointer`}
           >
-            
-            <span className="group">{item}</span>
+            <span
+              className={`absolute top-1/2 left-0 h-2 w-2 rounded-full bg-orange-500 ${
+                index === 0
+                  ? "opacity-100"
+                  : "opacity-0 group-hover:opacity-100"
+              } transform -translate-y-1/2 transition-opacity duration-300`}
+            ></span>
+            <span className="menue_item">{item}</span>
           </li>
         ))}
       </ul>

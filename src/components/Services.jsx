@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../styles/services.css"
 import CommonP from './CommonP'
 import TextWithShape from './Text';
 import right from "../images/right.png"
@@ -112,7 +112,7 @@ const Services = () => {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="absolute inset-0 bg-[#00866BB2] bg-opacity-30 transition duration-300 group-hover:bg-opacity-40" />
+                <div className="absolute inset-0 bg-[#00866BB2] bg-opacity-30 transition duration-300 group-hover:bg-[#FF870F] group-hover:bg-opacity-[0.7]" />
 
                 <div className="relative z-10 text-white px-[30px] py-[20px] flex flex-col justify-between h-full">
                   <div className="w-24 h-24 border border-dashed border-white rounded-full flex items-center justify-center shadow-md">
@@ -149,12 +149,12 @@ const Services = () => {
       <img
         src={right}
         alt="right"
-        className="w-[60px] absolute top-10 left-0"
+        className="service_shape1  w-[100px] absolute top-[80px] left-0"
       />
       <img
         src={left}
         alt="right"
-        className="w-[100px] absolute top-0 right-0"
+        className="service_shape w-[100px] absolute top-0 right-0"
       />
     </div>
   );

@@ -6,3 +6,109 @@
     width: 100%;
     height: 600px; /* or min-height: 500px; */
 }
+
+/* services.css */
+
+.service_shape {
+    animation: floatBottomLeft 5s ease-in-out infinite;
+    -webkit-animation: floatBottomLeft 5s ease-in-out infinite;
+}
+  
+  @keyframes floatBottomLeft {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-70px, 60px);
+      -webkit-transform: translate(-70px, 60px);
+      -moz-transform: translate(-70px, 60px);
+      -ms-transform: translate(-70px, 60px);
+      -o-transform: translate(-70px, 60px);
+}
+    100% {
+      transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
+      -moz-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -o-transform: translate(0, 0);
+}
+  }
+  
+  .service_shape1 {
+    animation: floatRight 5s ease-in-out infinite;
+    -webkit-animation: floatRight 5s ease-in-out infinite;
+}
+
+@keyframes floatRight {
+    0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(70px, 40px);
+        -webkit-transform: translate(70px, 40px);
+        -moz-transform: translate(70px, 40px);
+        -ms-transform: translate(70px, 40px);
+        -o-transform: translate(70px, 40px);
+}
+      100% {
+        transform: translate(0, 0);
+      }
+}
+
+@keyframes floatTopRight {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(40px, -60px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  .plane {
+    animation: floatTopRight 5 ease-in-out infinite;
+    -webkit-animation: floatTopRight 5 ease-in-out infinite;
+}
+
+  
+  @keyframes floatBalloon {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-150px, -80px);
+      -webkit-transform: translate(-150px, -80px);
+      -moz-transform: translate(-150px, -80px);
+      -ms-transform: translate(-150px, -80px);
+      -o-transform: translate(-150px, -80px);
+}
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes floatBalloon2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(150px, 80px);
+      -webkit-transform: translate(150px, 80px);
+      -moz-transform: translate(150px, 80px);
+      -ms-transform: translate(150px, 80px);
+      -o-transform: translate(150px, 80px);
+}
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  .ballon {
+    animation: floatBalloon 6s ease-in-out infinite;
+    -webkit-animation: floatBalloon 6s ease-in-out infinite;
+}
+  .balloon{
+    animation: floatBalloon2 6s ease-in-out infinite;
+    -webkit-animation: floatBalloon2 6s ease-in-out infinite;
+}

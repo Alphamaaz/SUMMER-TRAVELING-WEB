@@ -6,6 +6,7 @@ import time from "../images/clock.svg"
 import location from "../images/location.svg"
 import l_ballon from "../images/l-ballon.png"
 import r_ballon from "../images/r-ballon.png"
+import mask from "../images/mask_b.png"
 import CommonP from './CommonP';
 import TextWithShape from './Text';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -81,10 +82,17 @@ const Holiday = () => {
       },
     ];
   return (
-    <div className=" pt-5 bg-[#00866B] px-[72px] relative" 
-     >
+    <div
+      className=" pt-5  px-[72px] relative"
+      style={{
+        backgroundImage: `url(${mask})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* <img src={mask} alt="" className=" w-full " /> */}
-      <div className="py-5 flex flex-col justify-center items-center " >
+      <div className="py-5 flex flex-col justify-center items-center ">
         <CommonP text={"awesome tours"} />
         <h1 className="text-[50px] font-[400] text-white">
           Best <TextWithShape text={"Holiday"} /> Packages
@@ -96,7 +104,7 @@ const Holiday = () => {
       <div className="py-12 relative">
         <Swiper
           modules={[Pagination]}
-          spaceBetween={8} 
+          spaceBetween={8}
           slidesPerView={3}
           pagination={{
             clickable: true,
@@ -104,17 +112,16 @@ const Holiday = () => {
             bulletClass: "custom-bullet",
             bulletActiveClass: "custom-bullet-active",
           }}
-          
         >
           {services.map((service, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col p-4 w-full max-w-[400px] bg-white border border-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] rounded-[10px] ">
+              <div className="flex flex-col p-4 w-full max-w-[400px] bg-white  border border-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] rounded-[10px] ">
                 {/* Image Container */}
-                <div className="w-full h-[266px]  overflow-hidden">
+                <div className="w-full h-[266px] overflow-hidden">
                   <img
                     src={service.image}
                     alt="service"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110"
                   />
                 </div>
 
@@ -167,8 +174,8 @@ const Holiday = () => {
           ))}
         </Swiper>
 
-         {/* Custom Pagination Container - MUST be outside Swiper */}
-         <div className="custom-pagination mt-8"></div>
+        {/* Custom Pagination Container - MUST be outside Swiper */}
+        <div className="custom-pagination mt-8"></div>
       </div>
 
       {/* Add this CSS to your global styles (or in a CSS file) */}
@@ -182,40 +189,39 @@ const Holiday = () => {
           margin-top: 30px;
           z-index: 10;
         }
-        
+
         .custom-bullet {
           width: 8px;
           height: 8px;
-          background: rgba(255,255,255,0.5);
+          background: rgba(255, 255, 255, 0.5);
           margin: 0 4px !important;
           opacity: 1;
           transition: all 0.3s ease;
           display: inline-block !important;
-          border-radius:50%
+          border-radius: 50%;
         }
-        
+
         .custom-bullet-active {
           width: 24px;
-          background: #FF870F;
-          border-radius:14px;
+          background: #ff870f;
+          border-radius: 14px;
         }
-        
+
         /* Force show pagination on all devices */
         .swiper-pagination {
           display: flex !important;
         }
       `}</style>
 
-
       <img
         src={l_ballon}
         alt="ballon"
-        className="absolute w-[100px] top-0 left-0"
+        className="balloon absolute w-[100px] top-0 left-0"
       />
       <img
         src={r_ballon}
         alt="ballon"
-        className="absolute w-[100px] top-[80px] right-0"
+        className=" ballon absolute w-[100px] top-[80px] right-0"
       />
     </div>
   );

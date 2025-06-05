@@ -65,8 +65,9 @@ const OurBlogs = () => {
             <img
               src={card.img}
               alt={card.title}
-              className="w-full h-[447px] object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-[447px] object-cover  transition-transform duration-300"
             />
+            <div className="absolute top-0 left-0 bottom-0 right-0 bg-[#FF870F] opacity-0 hover:opacity-[0.7] transition-opacity"></div>
 
             {/* Bottom Info */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] bg-white p-4 rounded-lg shadow-lg">
@@ -89,8 +90,16 @@ const OurBlogs = () => {
         ))}
       </div>
 
-      <img src={plane_l} alt="plane" className='absolute top-0 right-0 '/>
-      <img src={plane_r} alt="plane" className='absolute top-15 left-0'/>
+      <img
+        src={plane_l}
+        alt="plane"
+        className="service_shape  absolute top-0 right-0 "
+      />
+      <img
+        src={plane_r}
+        alt="plane"
+        className="plane absolute top-15 left-0"
+      />
     </div>
   );
 }
