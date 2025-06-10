@@ -42,7 +42,6 @@ const Hero = () => {
   }, []);
   return (
     <section
-      className="bg-gradient-to-r from-white via-[#F4F9F8] to-[#FDF4EF]  "
       style={{
         backgroundImage: `url(${BG})`,
         backgroundSize: "cover",
@@ -53,32 +52,36 @@ const Hero = () => {
       <Nav />
       <div className="relative flex flex-col md:flex-row  justify-between">
         {/* Left Content */}
-        <div className=" max-w-[680px] mx-[72px] py-[80px] ">
+        <div className=" w-full max-w-[calc(100%-60px)] md:max-w-[680px] mx-auto mx-[30px] md:mx-[72px] pt-[40px] md:py-[80px] ">
           <div className=" flex gap-2 items-center mb-3">
             <div className="h-[3px] w-[33px] bg-[#FF870F]"></div>
             <p className="text-orange-500 font-semibold tracking-wide  ">
               FIND YOUR SUMMER SPOT
             </p>
           </div>
-          <h1 className="text-[56px] font-[400]  mb-6 leading-tight">
+          <h1 className="text-[30px] md:text-[56px] font-[500] md:font[400]   md:mb-6 leading-tight">
             WANDER WHERE THE <br />
             SUN <TextWithShape text="WARMS" />
             YOUR SOUL
           </h1>
-
-          <p className="text-gray-500 text-lg ">
+          <img
+            src={hero} // replace with actual path
+            alt="Traveler"
+            className="md:hidden  w-[350px] h-auto"
+          />
+          <p className="text-gray-500 text-sm md:text-lg mt-4 md:mt-2">
             Embrace the sunshine and explore handpicked summer escapes made for
             you. From sun-soaked beaches to cool mountain retreats—your perfect
             summer starts here.
           </p>
 
-          <button className="flex items-center bg-teal-700 text-white font-semibold px-6 py-3 rounded-full hover:bg-[#FF870F] transition-colors mt-[40px]">
+          <button className="flex w-[90%] md:w-fit justify-center items-center bg-teal-700 text-white font-semibold px-6 py-3 rounded-full hover:bg-[#FF870F] transition-colors mt-[25px] md:mt-[40px]">
             START BOOKING <ChevronRight className="h-[20px] w-[20px]" />
           </button>
         </div>
 
         {/* Right Image */}
-        <div className="flex items-center justify-center w-[700px]">
+        <div className="hidden md:flex items-center justify-center w-[700px]">
           <img
             src={hero} // replace with actual path
             alt="Traveler"
@@ -88,115 +91,137 @@ const Hero = () => {
         <img
           src={cloud} // replace with actual path
           alt="Traveler"
-          className="cloud w-[200px] h-[123px] absolute top-[-8px] left-[48%] z-[-1]"
+          className="hidden md:flex cloud w-[200px] h-[123px] absolute top-[-8px] left-[48%] z-[-1]"
         />
         <img
           src={virus_small} // replace with actual path
           alt="Traveler"
           ref={ref}
-          className="sm_virus w-[28px] h-[28px] absolute top-[20%] right-[35%] z-[-1]"
+          className="hidden md:flex sm_virus w-[28px] h-[28px] absolute top-[20%] right-[35%] z-[-1]"
         />
         <img
           src={virus_large} // replace with actual path
           alt="Traveler"
-          className="lg_virus w-[61px] h-[61px] absolute top-[50%] right-[45%] z-[-1]"
+          className="hidden md:flex lg_virus w-[61px] h-[61px] absolute top-[50%] right-[45%] z-[-1]"
         />
         <img
           src={green_plane} // replace with actual path
           alt="Traveler"
-          className="green_plane w-[300px] absolute top-[70%] right-[33%] z-[-1]"
+          className="hidden md:flex green_plane w-[300px] absolute top-[70%] right-[33%] z-[-1]"
         />
         <img
           src={trophy} // replace with actual path
           alt="Traveler"
-          className=" trophy w-[140px] h-[130px] absolute bottom-[9%] right-[1%] z-[-1]"
+          className=" hidden md:flex trophy w-[140px] h-[130px] absolute bottom-[9%] right-[1%] z-[-1]"
         />
         <img
           src={track} // replace with actual path
           alt="Traveler"
-          className="w-[130px] h-[250px] absolute top-[-20px] right-[3%] z-[-1]"
+          className="hidden md:flex w-[130px] h-[250px] absolute top-[-20px] right-[3%] z-[-1]"
         />
         <img
           src={locaton} // replace with actual path
           alt="Traveler"
-          className="w-[20px] h-[20px] absolute top-[-35px] right-[5%] z-[-1]"
+          className="hidden md:flex w-[20px] h-[20px] absolute top-[-35px] right-[5%] z-[-1]"
         />
         <img
           src={aeroplane} // replace with actual path
           alt="Traveler"
-          className="aeroplane w-[20px] h-[20px] absolute top-[78px] right-[5%] z-[-1]"
+          className="hidden md:flex aeroplane w-[20px] h-[20px] absolute top-[78px] right-[5%] z-[-1]"
         />
       </div>
 
       {/* 2nd section  */}
-      <div className="flex justify-between items-center w-[1220px] mx-auto border border-white shadow-[0px_0px_10px_0px_#FF870F40] rounded-[90px]  bg-white mt-8">
-        {/* Location */}
-        <div className="px-6 py-3 flex-1">
-          <div className="flex gap-2 items-center justify-center">
-            <img src={locationo} alt="location" className="h-[20px] w-[20px]" />
-            <span className="text-[18px] font-[400] text-[#929292]">
-              Location
-            </span>
+      <form className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row justify-between items-center max-w-[1220px] mx-auto border border-white shadow-[0px_0px_10px_0px_#FF870F40] rounded-md md:rounded-[90px] bg-white mt-8 overflow-hidden">
+          {/* Location */}
+          <div className="px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3]">
+            <div className="flex gap-2 items-center justify-center">
+              <img
+                src={locationo}
+                alt="location"
+                className="h-4 w-4 sm:h-5 sm:w-5"
+              />
+              <span className="text-sm sm:text-[18px] font-[400] text-[#929292]">
+                Location
+              </span>
+            </div>
+            <select className="text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none">
+              <option disabled selected>
+                Where to next
+              </option>
+              <option>Skardu, Pakistan</option>
+              <option>Paris, France</option>
+              <option>Bali, Indonesia</option>
+            </select>
           </div>
-          <h3 className="text-[20px] font-[400] mt-1 text-center">
-            Where to next
-          </h3>
-        </div>
 
-        {/* Divider */}
-        <div className="h-[60px] w-[1px] bg-[#E3E3E3] mx-2"></div>
-
-        {/* Type */}
-        <div className="px-6 py-3 flex-1">
-          <div className="flex gap-2 items-center justify-center mr-14">
-            <img src={tpe} alt="type" className="h-[20px] w-[20px]" />
-            <span className="text-[18px] font-[400] text-[#929292]">Type</span>
+          {/* Type */}
+          <div className="px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3]">
+            <div className="flex gap-2 items-center justify-center">
+              <img src={tpe} alt="type" className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="text-sm sm:text-[18px] font-[400] text-[#929292]">
+                Type
+              </span>
+            </div>
+            <select className="text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none">
+              <option disabled selected>
+                Booking Type
+              </option>
+              <option>One Way</option>
+              <option>Round Trip</option>
+              <option>Multi-City</option>
+            </select>
           </div>
-          <h3 className="text-[20px] font-[400] mt-1 text-center">
-            Booking Type
-          </h3>
-        </div>
 
-        {/* Divider */}
-        <div className="h-[60px] w-[1px] bg-[#E3E3E3] mx-2"></div>
-
-        {/* Date */}
-        <div className="px-6 py-3 flex-1">
-          <div className="flex gap-2 items-center justify-center">
-            <img src={calendar} alt="date" className="h-[20px] w-[20px]" />
-            <span className="text-[18px] font-[400] text-[#929292]">
-              Date From
-            </span>
+          {/* Date */}
+          <div className="px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3]">
+            <div className="flex gap-2 items-center justify-center">
+              <img
+                src={calendar}
+                alt="date"
+                className="h-4 w-4 sm:h-5 sm:w-5"
+              />
+              <span className="text-sm sm:text-[18px] font-[400] text-[#929292]">
+                Date From
+              </span>
+            </div>
+            <input
+              type="date"
+              className="text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none"
+            />
           </div>
-          <h3 className="text-[20px] font-[400] mt-1 text-center">
-            Select Date
-          </h3>
-        </div>
 
-        {/* Divider */}
-        <div className="h-[60px] w-[1px] bg-[#E3E3E3] mx-2"></div>
-
-        {/* Guests */}
-        <div className="px-6 py-3 flex-1">
-          <div className="flex gap-2 items-center justify-center">
-            <img src={guest} alt="guests" className="h-[20px] w-[20px]" />
-            <span className="text-[18px] font-[400] text-[#929292]">
-              Guests
-            </span>
+          {/* Guests */}
+          <div className="px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 border-[#E3E3E3]">
+            <div className="flex gap-2 items-center justify-center">
+              <img src={guest} alt="guests" className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="text-sm sm:text-[18px] font-[400] text-[#929292]">
+                Guests
+              </span>
+            </div>
+            <select className="text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none">
+              <option>01</option>
+              <option selected>02</option>
+              <option>03</option>
+              <option>04+</option>
+            </select>
           </div>
-          <h3 className="text-[20px] font-[400] mt-1 text-center">02</h3>
-        </div>
 
-        {/* Search Button - Now Full Height and Right-Aligned */}
-        <div className="self-stretch flex">
-          {" "}
-          {/* Container to help with alignment */}
-          <button className="bg-[#00866B] hover:bg-[#006e58] transition-colors rounded-r-[90px] px-8 h-full flex items-center justify-center gap-2">
-            <span className="text-[16px] font-[600] text-white">Search</span>
-            <Search className="h-[15px] w-[15px] text-white" />
-          </button>
+          {/* Search Button */}
+          <div className="w-full lg:w-auto self-stretch">
+            <button
+              type="submit"
+              className="bg-[#00866B] hover:bg-[#FF870F] duration-400 transition-colors md:rounded-b-[20px] lg:rounded-b-none lg:rounded-r-[90px] px-6 py-3 sm:px-8 sm:py-4 lg:h-full w-full flex items-center justify-center gap-2"
+            >
+              <span className="text-sm sm:text-[16px] font-[600] text-white">
+                Search
+              </span>
+              <Search className="h-3 w-3 sm:h-[15px] sm:w-[15px] text-white" />
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
     </section>
   );
 };

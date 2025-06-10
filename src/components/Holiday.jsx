@@ -83,7 +83,7 @@ const Holiday = () => {
     ];
   return (
     <div
-      className=" pt-5  px-[72px] relative"
+      className=" pt-5 px-[40px] md:px-[72px] relative"
       style={{
         backgroundImage: `url(${mask})`,
         backgroundSize: "cover",
@@ -94,18 +94,28 @@ const Holiday = () => {
       {/* <img src={mask} alt="" className=" w-full " /> */}
       <div className="py-5 flex flex-col justify-center items-center ">
         <CommonP text={"awesome tours"} />
-        <h1 className="text-[50px] font-[400] text-white">
+        <h1 className="text-[30px] md:text-[50px] font-[400] text-white">
           Best <TextWithShape text={"Holiday"} /> Packages
         </h1>
-        <p className="text-[18px] font-[400] text-[#FDFDFD] mt-5">
+        <p className="text-[15px] md:text-[18px] text-center md:text-start font-[400] text-[#FDFDFD] mt-3 md:mt-5">
           We take the pressure off so you can focus on enjoying the sunshine.
         </p>
       </div>
-      <div className="py-12 relative">
+      <div className="py-4 md:py-12 relative">
         <Swiper
           modules={[Pagination]}
           spaceBetween={8}
-          slidesPerView={3}
+          slidesPerView={1} // 1 slide on mobile
+          breakpoints={{
+            640: {
+              slidesPerView: 2, // 2 slides on tablet
+              spaceBetween: 12,
+            },
+            1024: {
+              slidesPerView: 3, // 3 slides on desktop
+              spaceBetween: 16,
+            },
+          }}
           pagination={{
             clickable: true,
             el: ".custom-pagination",
@@ -115,9 +125,9 @@ const Holiday = () => {
         >
           {services.map((service, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col p-4 w-full max-w-[400px] bg-white  border border-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] rounded-[10px] ">
+              <div className="flex flex-col p-3 sm:p-4 w-full max-w-[400px] mx-auto bg-white border border-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] rounded-[10px]">
                 {/* Image Container */}
-                <div className="w-full h-[266px] overflow-hidden">
+                <div className="w-full h-[180px] sm:h-[220px] md:h-[266px] overflow-hidden">
                   <img
                     src={service.image}
                     alt="service"
@@ -126,48 +136,52 @@ const Holiday = () => {
                 </div>
 
                 {/* Content */}
-                <div className="mt-3">
-                  <h2 className="text-[24px] font-[600] text-black">
+                <div className="mt-2 sm:mt-3">
+                  <h2 className="text-lg sm:text-xl md:text-[24px] font-[600] text-black">
                     {service.title}
                   </h2>
                 </div>
 
                 {/* Location & Discount */}
-                <div className="mt-4 flex justify-between items-center">
-                  <div
-                    className="flex items-start
-                   gap-2"
-                  >
-                    <img src={location} alt="location" className="h-6 w-6" />
-                    <span className="text-[18px] text-[#929292] max-w-[194px]">
+                <div className="mt-2 sm:mt-4 flex justify-between items-center">
+                  <div className="flex items-start gap-1 sm:gap-2">
+                    <img
+                      src={location}
+                      alt="location"
+                      className="h-5 w-5 sm:h-6 sm:w-6"
+                    />
+                    <span className="text-sm sm:text-base md:text-[18px] text-[#929292] max-w-[150px] sm:max-w-[194px]">
                       {service.description}
                     </span>
                   </div>
-                  <div className="bg-[#FF870F] px-4 py-1 rounded-full">
-                    <p className="text-[18px] text-white">50% off</p>
+                  <div className="bg-[#FF870F] px-2 sm:px-4 py-1 rounded-full">
+                    <p className="text-sm sm:text-base md:text-[18px] text-white">
+                      50% off
+                    </p>
                   </div>
                 </div>
 
                 {/* Duration & Price */}
-                <div className="mt-3 flex justify-between items-center">
-                  <div className="flex items-center gap-2">
+                <div className="mt-2 sm:mt-3 flex justify-between items-center">
+                  <div className="flex items-center gap-1 sm:gap-2">
                     <img
                       src={service.icon}
                       alt="duration"
-                      className="h-6 w-6"
+                      className="h-5 w-5 sm:h-6 sm:w-6"
                     />
-                    <span className="text-[18px] text-[#929292]">
+                    <span className="text-sm sm:text-base md:text-[18px] text-[#929292]">
                       {service.time}
                     </span>
                   </div>
-                  <p className="text-[24px] font-[600] text-[#FF870F]">
+                  <p className="text-lg sm:text-xl md:text-[24px] font-[600] text-[#FF870F]">
                     {service.budget}
                   </p>
                 </div>
 
                 {/* Button */}
-                <button className="flex justify-center items-center gap-2 mt-6 py-3 bg-[#00866B] text-white text-[18px] font-[500] rounded-full hover:bg-[#006e58] transition-colors hover:bg-[#FF870F] transiton-colors">
-                  View details <ChevronRight className="h-5 w-5" />
+                <button className="flex justify-center items-center gap-2 mt-4 sm:mt-6 py-2 sm:py-3 bg-[#00866B] text-white text-base sm:text-[18px] font-[500] rounded-full hover:bg-[#FF870F] transition-colors">
+                  View details{" "}
+                  <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
                 </button>
               </div>
             </SwiperSlide>
@@ -199,7 +213,7 @@ const Holiday = () => {
           transition: all 0.3s ease;
           display: inline-block !important;
           border-radius: 50%;
-          cursor:pointer
+          cursor: pointer;
         }
 
         .custom-bullet-active {
@@ -217,12 +231,12 @@ const Holiday = () => {
       <img
         src={l_ballon}
         alt="ballon"
-        className="balloon absolute w-[100px] top-0 left-0"
+        className="hidden md:flex  balloon absolute w-[100px] top-0 left-0"
       />
       <img
         src={r_ballon}
         alt="ballon"
-        className=" ballon absolute w-[100px] top-[80px] right-0"
+        className="hidden md:flex ballon absolute w-[100px] top-[80px] right-0"
       />
     </div>
   );

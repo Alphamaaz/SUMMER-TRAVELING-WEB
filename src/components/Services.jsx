@@ -77,13 +77,13 @@ const Services = () => {
     ];
       
   return (
-    <div className=" bg-[linear-gradient(to_bottom,_#FFF8F1,_#E0F7EF)] relative py-12 px-[72px]">
+    <div className=" bg-[linear-gradient(to_bottom,_#FFF8F1,_#E0F7EF)] relative py-12 px-[40px] md:px-[72px]">
       <div className="w-full flex flex-col justify-center items-center mx-auto text-center">
         <CommonP text={"What we Offer"} />
-        <h1 className="text-[50px] font-[400] mt-1">
+        <h1 className="text-[30px] md:text-[50px] font-[500] md:font-[400] mt-1">
           OUR <TextWithShape text={"SERVICES"} />
         </h1>
-        <p className="text-[18px] font-[400] text-[#929292] mt-4">
+        <p className="text-[15px] md:text-[18px]  font-[400] text-[#929292] mt-4">
           We take the pressure off so you can focus on enjoying the sunshine.
         </p>
       </div>
@@ -112,7 +112,7 @@ const Services = () => {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="absolute inset-0 bg-[#00866BB2] bg-opacity-30 transition duration-300 group-hover:bg-[#FF870F] group-hover:bg-opacity-[0.7]" />
+                <div className="absolute inset-0 bg-[#00866BB2] bg-opacity-30 transition duration-500 group-hover:bg-[#FF870F] group-hover:bg-opacity-[0.7]" />
 
                 <div className="relative z-10 text-white px-[30px] py-[20px] flex flex-col justify-between h-full">
                   <div className="w-24 h-24 border border-dashed border-white rounded-full flex items-center justify-center shadow-md">
@@ -149,12 +149,12 @@ const Services = () => {
       <img
         src={right}
         alt="right"
-        className="service_shape1  w-[100px] absolute top-[80px] left-0"
+        className="service_shape1  w-[60px] md:w-[100px] absolute top-[80px] left-0"
       />
       <img
         src={left}
         alt="right"
-        className="service_shape w-[100px] absolute top-0 right-0"
+        className="service_shape w-[60px] md:w-[100px] absolute top-0 right-0"
       />
     </div>
   );

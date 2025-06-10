@@ -45,12 +45,12 @@ const OurBlogs = () => {
     >
       <div className="pt-5 flex flex-col items-center ">
         <CommonP text={"Blogs and news"} />
-        <h1 className="text-[50px] font-[400] text-black">
+        <h1 className="text-[35px] md:text-[50px] font-[400] text-black">
           OUR <TextWithShape text={"BLOGS"} />
         </h1>
-        <p className="text-[18px] font-[400] text-[#929292] mt-6 text-center">
+        <p className="text-[15px] md:text-[18px] font-[400] text-[#929292] mt-6 text-center">
           Get inspired with travel tips, destination guides, and stories to
-          spark <br />
+          spark <br className='hidden md:inline'/>
           your next summer adventure
         </p>
       </div>
@@ -65,9 +65,9 @@ const OurBlogs = () => {
             <img
               src={card.img}
               alt={card.title}
-              className="w-full h-[447px] object-cover  transition-transform duration-300"
+              className="w-full h-[447px] object-cover  transition-transform duration-500"
             />
-            <div className="absolute top-0 left-0 bottom-0 right-0 bg-[#FF870F] opacity-0 hover:opacity-[0.7] transition-opacity"></div>
+            <div className="absolute top-0 left-0 bottom-0 right-0 bg-[#FF870F] opacity-0 hover:opacity-[0.7] duration-500 transition-opacity"></div>
 
             {/* Bottom Info */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] bg-white p-4 rounded-lg shadow-lg">
@@ -93,12 +93,12 @@ const OurBlogs = () => {
       <img
         src={plane_l}
         alt="plane"
-        className="service_shape  absolute top-0 right-0 "
+        className="hidden md:flex service_shape  absolute top-0 right-0 "
       />
       <img
         src={plane_r}
         alt="plane_left"
-        className="blogs_plane absolute top-15 left-0"
+        className="hidden md:flex  blogs_plane absolute top-15 left-0"
       />
     </div>
   );

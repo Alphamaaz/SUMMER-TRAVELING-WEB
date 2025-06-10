@@ -28,7 +28,7 @@ const Footer = () => {
   ];
   return (
     <div
-      className="relative w-full min-h-[450px] pt-8  px-4 md:px-12 lg:px-[72px] flex flex-col md:flex-row flex-wrap justify-between gap-8 md:gap-12"
+      className="relative w-full min-h-[450px] pt-8 px-4 md:px-12 lg:px-[72px] flex flex-col items-center md:items-start md:flex-row flex-wrap justify-center gap-8 md:gap-12"
       style={{
         backgroundImage: `url(${offerImage})`,
         backgroundSize: "cover",
@@ -37,7 +37,7 @@ const Footer = () => {
       }}
     >
       {/* Brand Info Section */}
-      <div className="text-white flex-1 min-w-[250px] max-w-[400px]">
+      <div className="text-white flex-1 min-w-[250px] max-w-[400px] text-center md:text-left">
         <h1 className="text-2xl md:text-[32px] font-bold mb-5">
           LAYNOVA SUNSCAPE
         </h1>
@@ -54,9 +54,9 @@ const Footer = () => {
             <input
               type="text"
               placeholder="ENTER YOUR EMAIL HERE..."
-              className="bg-transparent outline-none border-none w-full text-white placeholder-white/70"
+              className="bg-transparent outline-none border-none w-full text-white placeholder-white/70 text-center md:text-left"
             />
-            <button className="hover:scale-110 transition-transform">
+            <button className="hover:scale-110 duration-300 transition-transform">
               <img
                 src={send}
                 alt="send"
@@ -68,16 +68,16 @@ const Footer = () => {
       </div>
 
       {/* Quick Links Section */}
-      <div className="text-white flex-1 min-w-[150px] max-w-[200px]">
+      <div className="text-white flex-1 min-w-[150px] max-w-[200px] text-center md:text-left">
         <h1 className="text-xl md:text-[24px] font-semibold mb-4">
           Quick Links
         </h1>
-        <div className="quick_links relative h-px w-[130px] bg-white mb-4"></div>
+        <div className="quick_links relative h-px w-[130px] bg-white mb-4 mx-auto md:mx-0"></div>
         <ul className="space-y-3">
           {["Home", "About", "Services", "Packages", "Blog"].map((item) => (
             <li
               key={item}
-              className="hover:text-[#FF870F] cursor-pointer transition-colors"
+              className="hover:text-[#FF870F] cursor-pointer transition-colors duration-300"
             >
               {item}
             </li>
@@ -86,45 +86,45 @@ const Footer = () => {
       </div>
 
       {/* Contact Section */}
-      <div className="text-white flex-1 min-w-[200px] max-w-[250px]">
+      <div className="text-white flex-1 min-w-[200px] max-w-[250px] text-center md:text-left">
         <h2 className="text-xl md:text-[24px] font-semibold mb-4">
           To Communicate
         </h2>
-        <div className="quick_links relative h-px w-[130px] bg-white mb-4"></div>
+        <div className="quick_links relative h-px w-[130px] bg-white mb-4 mx-auto md:mx-0"></div>
 
         <div className="space-y-4 mb-6">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 justify-center md:justify-start">
             <Phone className="h-5 w-5" />
             <p className="text-base md:text-[18px]">123-456-789</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 justify-center md:justify-start">
             <Mail className="h-5 w-5" />
             <p className="text-base md:text-[18px]">info@summertravel.com</p>
           </div>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 justify-center md:justify-start">
           {[facebook, instagram, pintrest, x].map((icon, index) => (
             <img
               key={index}
               src={icon}
               alt="social"
-              className="h-6 w-6 hover:scale-125 transition-transform cursor-pointer"
+              className="h-6 w-6 hover:scale-125 transition-transform duration-500 cursor-pointer"
             />
           ))}
         </div>
       </div>
 
       {/* Gallery Section */}
-      <div className="text-white flex-1 min-w-[250px] max-w-[300px]">
+      <div className="text-white flex-1 min-w-[250px] max-w-[300px] text-center md:text-left">
         <h1 className="text-xl md:text-[24px] font-semibold mb-4">
           Our Gallery
         </h1>
-        <div className="grid grid-cols-3 gap-2 md:gap-2">
+        <div className="grid grid-cols-3 gap-2 md:gap-2 justify-items-center md:justify-items-start">
           {images.map((item, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-md hover:scale-105 transition-transform cursor-pointer"
+              className="overflow-hidden rounded-md hover:scale-105 transition-transform duration-500 cursor-pointer"
             >
               <img
                 src={item.img}
@@ -137,7 +137,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="w-full  flex justify-center items-center text-center text-white/80  pt-2 border-t border-white/20">
+      <div className="w-full flex justify-center items-center text-center text-white/80 pt-2 border-t border-white/20">
         <p>
           © {new Date().getFullYear()} Laynova Sunscape. All rights reserved.
         </p>

@@ -82,8 +82,25 @@
   }
   
   .marquee {
-    animation: scroll 20s linear infinite;
+    animation: scroll 60s linear infinite;
     white-space: nowrap;
-    /* display: inline-block; */
+    -webkit-animation: scroll 60s linear infinite;
+}
+  
+@media (max-width:500px) {
+  .rotation::before {
+    content: '';
+    position: absolute;
+    top: 1;
+    left: 2;
+    height: 70px;
+    width: 70px;
+    border: 2px dotted white;
+    border-radius: 50%;
+    /*background: white;
+    */transform: translateY(-50%);
+    animation: rotation 2s ease-in-out infinite;
+    -webkit-animation: rotation 2s ease-in-out infinite;
   }
   
+}

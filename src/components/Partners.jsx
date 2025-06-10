@@ -18,7 +18,7 @@ const Partners = () => {
     ]
   return (
     <div
-      className=" w-full h-[400px] md:h-[500px] lg:h-[550px]  flex flex-col items-center justify-center gap-[40px]  px-[72px]" // adjust height as needed
+      className=" w-full h-[400px] md:h-[500px] lg:h-[550px]  flex flex-col items-center justify-center gap-[40px]  px-[30px] md:px-[72px]" // adjust height as needed
       style={{
         backgroundImage: `url(${offerImage})`,
         backgroundSize: "cover",
@@ -28,22 +28,22 @@ const Partners = () => {
     >
       <div className="pt-5 flex flex-col items-center ">
         <CommonP text={"our partners"} />
-        <h1 className="text-[50px] font-[400] text-black">
+        <h1 className="text-[30px] md:text-[50px] font-[400] text-black">
           OUR <TextWithShape text={"trusted"} />
           PARTNERS
         </h1>
-        <p className="text-[18px] font-[400] text-[#929292] mt-6 text-center">
+        <p className="text-[15px] md:text-[18px] font-[400] text-[#929292] mt-6 text-center">
           Proudly partnered with top travel brands, airlines, and resorts to
           bring you the best <br />
           summer experiences.
         </p>
       </div>
       <div className="overflow-hidden w-full">
-        <div className="marquee flex gap-10">
+        <div className="marquee flex gap-5 md:gap-10">
           {[...logos, ...logos].map((item, index) => (
             <div
               key={index}
-              className="bg-[#FDFDFD] px-[40px] py-[25px] flex items-center justify-center border border-[#DEDEDE] rounded-[90px] min-w-[200px]"
+              className="bg-[#FDFDFD] px-[15px] md:px-[40px] py-[8px] md:py-[25px] flex items-center justify-center border border-[#DEDEDE] rounded-[90px] min-w-[200px]"
             >
               <img src={item.logo} alt="logo" className="w-[130px]" />
             </div>
