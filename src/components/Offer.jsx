@@ -72,7 +72,7 @@ const Offer = () => {
           {/* Center Discount Badge */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-700 text-white w-20 h-20 sm:w-28 sm:h-28 md:w-[134px] md:h-[134px] rounded-full flex items-center justify-center z-10">
             <div className="rotation flex justify-center items-center relative">
-              <span className="absolute text-xs sm:text-sm md:text-[18px] font-[400] top-4 sm:top-6 md:top-7 right-4 sm:right-6 md:right-8">
+              <span className="absolute text-xs sm:text-sm md:text-[18px] font-[400] top-[-6px] sm:top-6 md:top-7 right-2 sm:right-6 md:right-8">
                 %
               </span>
               <div className="flex gap-1 sm:gap-2 items-center justify-center">

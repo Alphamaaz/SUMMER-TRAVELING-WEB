@@ -89,72 +89,83 @@ const Services = () => {
           We take the pressure off so you can focus on enjoying the sunshine.
         </p>
       </div>
-      <div className="pb-10">
+      <div className="pb-10 px-4 sm:px-6 lg:px-[70px]">
         <CustomCursor active={cursorActive} />
         <Swiper
           modules={[Pagination]}
-          spaceBetween={30}
+          spaceBetween={20} // Reduced space on mobile
           pagination={{
             el: ".custom-swiper-pagination",
             clickable: true,
           }}
-          slidesPerView={1} // 1 slide on mobile
+          slidesPerView={1}
           breakpoints={{
             640: {
-              slidesPerView: 2, // 2 slides on tablet
-              spaceBetween: 12,
+              slidesPerView: 2,
+              spaceBetween: 24,
             },
             1024: {
-              slidesPerView: 3, // 3 slides on desktop
-              spaceBetween: 16,
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1280: {
+              slidesPerView: 3,
+              spaceBetween: 40,
             },
           }}
-          className="px-[70px] mt-9"
+          className="mt-6 sm:mt-9"
         >
           {services.map((service, index) => (
             <SwiperSlide key={index}>
               <div
-                className="relative rounded-[10px] overflow-hidden shadow-lg group h-full"
+                className="relative rounded-[10px] overflow-hidden shadow-lg group h-[400px] sm:h-[450px]"
                 style={{
                   backgroundImage: `url(${service.image})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
+                  minHeight: "400px", // Ensure minimum height on mobile
                 }}
                 onMouseEnter={() => setCursorActive(true)}
                 onMouseLeave={() => setCursorActive(false)}
               >
                 <div className="absolute inset-0 bg-[#00866BB2] bg-opacity-30 transition duration-500 group-hover:bg-[#FF870F] group-hover:bg-opacity-[0.7]" />
 
-                <div className="relative z-10 text-white px-[30px] py-[20px] flex flex-col justify-between h-full">
-                  <div className="w-24 h-24 border border-dashed border-white rounded-full flex items-center justify-center shadow-md">
+                <div className="relative z-10 text-white px-4 sm:px-6 lg:px-[30px] pt-[30px] pb-[15px] sm:py-5 lg:py-[20px] flex flex-col justify-between h-full">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 border border-dashed border-white rounded-full flex items-center justify-center shadow-md mx-auto lg:mx-0">
                     <img
                       src={service.icon}
                       alt="icon"
-                      className="h-[50px] w-[60px]"
+                      className="h-8 w-10 sm:h-10 sm:w-12 lg:h-[50px] lg:w-[60px]"
                     />
                   </div>
 
-                  <div>
-                    <h3 className="text-[24px] font-[600] mt-5">
+                  <div className="text-center lg:text-left">
+                    <h3 className="text-xl sm:text-2xl lg:text-[24px] font-[600] mt-3 sm:mt-4 lg:mt-5">
                       {service.title}
                     </h3>
-                    <img src={curve} alt="curve" className="my-3 w-[275px]" />
-                    <p className="text-[18px] mt-5">{service.description}</p>
+                    <img
+                      src={curve}
+                      alt="curve"
+                      className="my-2 sm:my-3 w-full max-w-[275px] mx-auto lg:mx-0"
+                    />
+                    <p className="text-sm sm:text-base lg:text-[18px] mt-3 sm:mt-4 lg:mt-5">
+                      {service.description}
+                    </p>
                   </div>
 
                   <a
                     href="#"
-                    className="flex gap-3 justify-center items-center text-[16px] text-[#00866B] font-[600] inline-block bg-white rounded-full px-4 py-[18px] hover:bg-[#FF870F] transition-colors mt-8"
+                    className="flex gap-2 sm:gap-3 justify-center items-center text-sm sm:text-base lg:text-[16px] text-[#00866B] font-[600]  bg-white rounded-full px-3 sm:px-4 py-2 sm:py-3 lg:py-[18px] hover:bg-[#FF870F] transition-colors mt-4 sm:mt-6 lg:mt-8  lg:mx-0"
                   >
-                    EXPLORE MORE <ArrowRight />
+                    EXPLORE MORE{" "}
+                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                   </a>
                 </div>
               </div>
             </SwiperSlide>
           ))}
-          {/* Dot pagination container */}
         </Swiper>
-        <div className="custom-swiper-pagination mt-6 flex justify-center"></div>
+        <div className="custom-swiper-pagination mt-4 sm:mt-6 flex justify-center"></div>
       </div>
 
       <img
