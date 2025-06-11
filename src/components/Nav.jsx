@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Search, Menu } from "lucide-react";
+import { Search, Menu ,Cross, X} from "lucide-react";
 
 const Nav = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
+    setIsSearchOpen((prev) => !prev);
   };
 
   const toggleMobileMenu = () => {
@@ -56,7 +56,7 @@ const Nav = () => {
         <div className="lg:hidden relative">
           <input
             type="text"
-            className="px-4 py-[7px] w-[180px] sm:w-48 border-none outline-none rounded-md bg-white"
+            className="px-4 py-[7px] w-[95%] sm:w-48 border-none outline-none rounded-md bg-white ml-2"
             placeholder="Search..."
           />
         </div>
@@ -64,17 +64,14 @@ const Nav = () => {
         {/* Desktop Search - Visible on large screens */}
         <div className="hidden lg:flex items-center gap-4">
           <div className="relative flex items-center">
-            <div
-              onClick={()=>toggleSearch()}
-              className={`w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white flex justify-center items-center text-black text-xl cursor-pointer hover:scale-105 transition-transform ${
-                isSearchOpen
-                  ? "opacity-0 scale-0 absolute"
-                  : "opacity-100 scale-100"
-              }`}
-              style={{ transition: "all 0.3s ease" }}
-            >
-              <Search className="w-4 h-4 lg:w-5 lg:h-5 text-gray-500 pointer-events-none" />
-            </div>
+            {/* Search Icon */}
+            {!isSearchOpen && (
+              <button onClick={toggleSearch} className="search-button">
+                <Search className="search-icon" />
+              </button>
+            )}
+
+            {/* Search Input */}
             <input
               type="text"
               className={`px-5 lg:px-7 py-2 lg:py-[10px] border-none outline-none rounded-md bg-white transition-all duration-300 ${
@@ -85,7 +82,16 @@ const Nav = () => {
               placeholder="Search..."
               style={{ transition: "all 0.3s ease" }}
             />
+
+            {/* Close Icon */}
+            {isSearchOpen && (
+              <X
+                className="absolute right-2 w-5 h-5 text-gray-500 cursor-pointer"
+                onClick={toggleSearch}
+              />
+            )}
           </div>
+
           <button className="hidden lg:block bg-white text-black px-4 lg:px-6 py-2 lg:py-3 rounded-full font-medium hover:bg-[#FF870F] transition-colors">
             GET IN TOUCH
           </button>
@@ -93,7 +99,11 @@ const Nav = () => {
 
         {/* Mobile Hamburger Menu - Visible only on small screens */}
         <button className="lg:hidden text-white p-2" onClick={toggleMobileMenu}>
-          <Menu className="w-6 h-6" />
+          {isMobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 

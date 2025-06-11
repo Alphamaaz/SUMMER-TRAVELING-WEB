@@ -1,0 +1,31 @@
+/* CustomCursor.css */
+.custom-cursor {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #00866B;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: 
+    transform 0.15s ease,
+    width 0.15s ease,
+    height 0.15s ease,
+    background 0.15s ease;
+}
+
+/* Add to your global CSS */
+.hover-custom-card {
+  cursor: none !important;
+}
+
+.hover-custom-card:hover .custom-cursor {
+  display: block;
+}
+
+/* Ensure buttons have default cursor */
+button {
+  cursor: pointer !important;
+}

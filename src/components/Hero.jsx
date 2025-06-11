@@ -14,7 +14,7 @@ import aeroplane from '../images/aeroplane.svg'
 import track from '../images/track.png'
 import trophy from '../images/trophy.png'
 import "../styles/hero.css"
-import { ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 
 import TextWithShape from "./Text";
 import { Search } from "lucide-react";
@@ -40,6 +40,16 @@ const Hero = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  
+    const dateInputRef = useRef(null);
+  
+    const handleFocusInput = () => {
+      if (dateInputRef.current) {
+        dateInputRef.current.showPicker?.(); // For modern browsers
+        dateInputRef.current.focus();        // Fallback for older ones
+      }
+    };
   return (
     <section
       style={{
@@ -59,7 +69,7 @@ const Hero = () => {
               FIND YOUR SUMMER SPOT
             </p>
           </div>
-          <h1 className="text-[30px] md:text-[56px] font-[500] md:font[400]   md:mb-6 leading-tight">
+          <h1 className="text-[24px] min-[400px]:text-[30px] md:text-[50px] font-[500] md:font[400]   md:mb-6 leading-tight">
             WANDER WHERE THE <br />
             SUN <TextWithShape text="WARMS" />
             YOUR SOUL
@@ -135,7 +145,7 @@ const Hero = () => {
       <form className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row justify-between items-center max-w-[1220px] mx-auto border border-white shadow-[0px_0px_10px_0px_#FF870F40] rounded-md md:rounded-[90px] bg-white mt-8 overflow-hidden">
           {/* Location */}
-          <div className="px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3]">
+          <div className="relative px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3]">
             <div className="flex gap-2 items-center justify-center">
               <img
                 src={locationo}
@@ -146,7 +156,7 @@ const Hero = () => {
                 Location
               </span>
             </div>
-            <select className="text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none">
+            <select className="appearance-none bg-white text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none pr-8 cursor-pointer">
               <option disabled selected>
                 Where to next
               </option>
@@ -154,17 +164,20 @@ const Hero = () => {
               <option>Paris, France</option>
               <option>Bali, Indonesia</option>
             </select>
+            <div className="absolute right-6 bottom-3 pointer-events-none text-[#929292] text-xl">
+              <ChevronDown />
+            </div>
           </div>
 
           {/* Type */}
-          <div className="px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3]">
+          <div className="relative px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3]">
             <div className="flex gap-2 items-center justify-center">
               <img src={tpe} alt="type" className="h-4 w-4 sm:h-5 sm:w-5" />
               <span className="text-sm sm:text-[18px] font-[400] text-[#929292]">
                 Type
               </span>
             </div>
-            <select className="text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none">
+            <select className="appearance-none bg-white text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none pr-8 cursor-pointer">
               <option disabled selected>
                 Booking Type
               </option>
@@ -172,11 +185,17 @@ const Hero = () => {
               <option>Round Trip</option>
               <option>Multi-City</option>
             </select>
+            <div className="absolute right-6 bottom-3 pointer-events-none text-[#929292] text-xl">
+              <ChevronDown />
+            </div>
           </div>
 
           {/* Date */}
-          <div className="px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3]">
-            <div className="flex gap-2 items-center justify-center">
+          <div
+            onClick={handleFocusInput}
+            className="px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3] cursor-pointer"
+          >
+            <div className="flex gap-2 items-center justify-center cursor-pointer">
               <img
                 src={calendar}
                 alt="date"
@@ -187,25 +206,29 @@ const Hero = () => {
               </span>
             </div>
             <input
+              ref={dateInputRef}
               type="date"
-              className="text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none"
+              className="appearance-none bg-white text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none cursor-pointer"
             />
           </div>
 
           {/* Guests */}
-          <div className="px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 border-[#E3E3E3]">
-            <div className="flex gap-2 items-center justify-center">
+          <div className="relative px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 border-[#E3E3E3]">
+            <div className="flex gap-2 items-center justify-center md:justify-start md:ml-5">
               <img src={guest} alt="guests" className="h-4 w-4 sm:h-5 sm:w-5" />
               <span className="text-sm sm:text-[18px] font-[400] text-[#929292]">
                 Guests
               </span>
             </div>
-            <select className="text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none">
-              <option>01</option>
-              <option selected>02</option>
-              <option>03</option>
-              <option>04+</option>
+            <select className="appearance-none bg-white text-base sm:text-[20px] font-[400] mt-1 text-center md:pl-10 w-full focus:outline-none  cursor-pointer">
+              <option className="md:text-start">01</option>
+              <option className="md:text-start">02</option>
+              <option className="md:text-start">03</option>
+              <option className="md:text-start">04+</option>
             </select>
+            <div className="absolute right-6 bottom-3 pointer-events-none text-[#929292] text-xl">
+              <ChevronDown />
+            </div>
           </div>
 
           {/* Search Button */}

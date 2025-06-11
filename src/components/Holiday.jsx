@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import skurdu from "../images/skardu.jpg"
 import paris from "../images/paris.jpg"
 import indonesia from "../images/indonesia.jpg"
@@ -14,7 +14,9 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { ChevronRight } from "lucide-react";
+import CustomCursor from './Cursor'
 const Holiday = () => {
+  const [cursorActive, setCursorActive] = useState(false);
     const services = [
       {
         image: skurdu,
@@ -94,7 +96,7 @@ const Holiday = () => {
       {/* <img src={mask} alt="" className=" w-full " /> */}
       <div className="py-5 flex flex-col justify-center items-center ">
         <CommonP text={"awesome tours"} />
-        <h1 className="text-[30px] md:text-[50px] font-[400] text-white">
+        <h1 className="text-[24px] min-[400px]:text-[30px] md:text-[50px] font-[400] text-white">
           Best <TextWithShape text={"Holiday"} /> Packages
         </h1>
         <p className="text-[15px] md:text-[18px] text-center md:text-start font-[400] text-[#FDFDFD] mt-3 md:mt-5">
@@ -102,6 +104,7 @@ const Holiday = () => {
         </p>
       </div>
       <div className="py-4 md:py-12 relative">
+        <CustomCursor active={cursorActive} />
         <Swiper
           modules={[Pagination]}
           spaceBetween={8}
@@ -125,7 +128,11 @@ const Holiday = () => {
         >
           {services.map((service, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col p-3 sm:p-4 w-full max-w-[400px] mx-auto bg-white border border-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] rounded-[10px]">
+              <div
+                className="flex flex-col p-3 sm:p-4 w-full max-w-[400px] mx-auto bg-white border border-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] rounded-[10px] cursor-none hover-custom-card"
+                onMouseEnter={() => setCursorActive(true)}
+                onMouseLeave={() => setCursorActive(false)}
+              >
                 {/* Image Container */}
                 <div className="w-full h-[180px] sm:h-[220px] md:h-[266px] overflow-hidden">
                   <img

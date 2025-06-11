@@ -92,7 +92,7 @@ const Offer = () => {
           tours—book your sunny escape now!
         </p>
         <button className="flex items-center justify-center w-[90%] md:w-fit gap-2 bg-[#00866B] text-[16px] text-white font-[600] px-[20px] md:px-[30px]  py-3 md:py-4 mt-10 rounded-[90px] hover:bg-[#FF870F] transition-colors duration-300">
-          explore more <ChevronRight />
+          Explore more <ChevronRight />
         </button>
       </div>
 

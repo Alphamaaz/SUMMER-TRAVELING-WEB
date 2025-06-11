@@ -15,7 +15,7 @@ import { Plus } from 'lucide-react'
 const WhyChoose = () => {
   return (
     <div className="mt-10 relative ">
-      <div className="services-container flex flex-row w-full px-[72px] gap-14 py-6">
+      <div className="services-container flex flex-row w-full px-[30px] md:px-[72px] gap-14  pt-6 ">
         {/* left side of the section  */}
         <div className=" hidden md:flex flex-1 relative max-w-[620px] ">
           {/* Rectangle Image */}
@@ -42,12 +42,14 @@ const WhyChoose = () => {
           </div>
         </div>
 
-        <div className="flex-1 w-full max-w-full lg:max-w-[630px] mt-0 lg:mt-12 order-1 lg:order-2">
+        {/* right side of the section  */}
+
+        <div className="flex-1 items-center md:items-start w-full max-w-full lg:max-w-[630px] mt-0 lg:mt-12 order-1 lg:order-2 ">
           <CommonP text={"Why We Are"} />
-          <h1 className="text-[30px] md:text-[50px] font-[400] mt-2">
+          <h1 className="text-center md:text-start text-[30px] md:text-[50px] font-[400] mt-2">
             Why <TextWithShape text={" Choose"} /> US
           </h1>
-          <p className="text-base sm:text-lg lg:text-[18px] font-[400] mt-4">
+          <p className="text-base sm:text-lg lg:text-[18px] text-center md:text-start font-[400] mt-4">
             We craft unforgettable summer journeys with handpicked destinations,
             exclusive deals, and flexible bookings. Whether you're chasing
             beaches, mountains, or sunsets—we make every trip easy, safe, and
@@ -113,7 +115,7 @@ const WhyChoose = () => {
             </button>
 
             {/* Avatar Group + Label */}
-            <div className="flex items-center justify-center sm:justify-start gap-3 sm:gap-5">
+            <div className="flex items-center justify-center sm:justify-start gap-3 sm:gap-5  mt-3 md:mt-0">
               {/* Avatars */}
               <div className="flex -space-x-3 sm:-space-x-4">
                 <img

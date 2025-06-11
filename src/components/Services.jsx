@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../styles/services.css"
 import CommonP from './CommonP'
 import TextWithShape from './Text';
@@ -14,9 +14,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import CustomCursor from './Cursor';
 
 
 const Services = () => {
+   const [cursorActive, setCursorActive] = useState(false);
     const services = [
       {
         title: "Curated Summer Destinations",
@@ -88,6 +90,7 @@ const Services = () => {
         </p>
       </div>
       <div className="pb-10">
+        <CustomCursor active={cursorActive} />
         <Swiper
           modules={[Pagination]}
           spaceBetween={30}
@@ -95,10 +98,16 @@ const Services = () => {
             el: ".custom-swiper-pagination",
             clickable: true,
           }}
+          slidesPerView={1} // 1 slide on mobile
           breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            640: {
+              slidesPerView: 2, // 2 slides on tablet
+              spaceBetween: 12,
+            },
+            1024: {
+              slidesPerView: 3, // 3 slides on desktop
+              spaceBetween: 16,
+            },
           }}
           className="px-[70px] mt-9"
         >
@@ -111,6 +120,8 @@ const Services = () => {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
+                onMouseEnter={() => setCursorActive(true)}
+                onMouseLeave={() => setCursorActive(false)}
               >
                 <div className="absolute inset-0 bg-[#00866BB2] bg-opacity-30 transition duration-500 group-hover:bg-[#FF870F] group-hover:bg-opacity-[0.7]" />
 
