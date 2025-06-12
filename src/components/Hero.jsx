@@ -146,7 +146,7 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row justify-between items-center max-w-[1220px] mx-auto border border-white shadow-[0px_0px_10px_0px_#FF870F40] rounded-md md:rounded-[90px] bg-white mt-8 overflow-hidden">
           {/* Location */}
           <div className="relative px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3]">
-            <div className="flex gap-2 items-center justify-center">
+            <div className="flex gap-2 items-center justify-center md:justify-start md:pl-7">
               <img
                 src={locationo}
                 alt="location"
@@ -156,13 +156,13 @@ const Hero = () => {
                 Location
               </span>
             </div>
-            <select className="appearance-none bg-white text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none pr-8 cursor-pointer">
-              <option disabled selected>
+            <select className="appearance-none bg-white text-base sm:text-[20px] font-[400] mt-1 text-center  md:pl-7 w-full focus:outline-none pr-8 cursor-pointer">
+              <option className="md:text-start" disabled selected>
                 Where to next
               </option>
-              <option>Skardu, Pakistan</option>
-              <option>Paris, France</option>
-              <option>Bali, Indonesia</option>
+              <option className="md:text-start">Skardu, Pakistan</option>
+              <option className="md:text-start">Paris, France</option>
+              <option className="md:text-start">Bali, Indonesia</option>
             </select>
             <div className="absolute right-6 bottom-3 pointer-events-none text-[#929292] text-xl">
               <ChevronDown />
@@ -171,19 +171,19 @@ const Hero = () => {
 
           {/* Type */}
           <div className="relative px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3]">
-            <div className="flex gap-2 items-center justify-center">
-              <img src={tpe} alt="type" className="h-4 w-4 sm:h-5 sm:w-5" />
-              <span className="text-sm sm:text-[18px] font-[400] text-[#929292]">
+            <div className="flex gap-2 items-center justify-center md:justify-start md:pl-9">
+              <img src={tpe} alt="type" className="h-4 w-4 sm:h-5 sm:w-5 " />
+              <span className="text-sm sm:text-[18px] font-[400] text-[#929292] ">
                 Type
               </span>
             </div>
-            <select className="appearance-none bg-white text-base sm:text-[20px] font-[400] mt-1 text-center w-full focus:outline-none pr-8 cursor-pointer">
-              <option disabled selected>
+            <select className="appearance-none bg-white text-base sm:text-[20px] font-[400] mt-1 text-center md:pl-9 w-full focus:outline-none pr-8 cursor-pointer">
+              <option disabled selected className="md:text-start">
                 Booking Type
               </option>
-              <option>One Way</option>
-              <option>Round Trip</option>
-              <option>Multi-City</option>
+              <option className="md:text-start">One Way</option>
+              <option className="md:text-start">Round Trip</option>
+              <option className="md:text-start">Multi-City</option>
             </select>
             <div className="absolute right-6 bottom-3 pointer-events-none text-[#929292] text-xl">
               <ChevronDown />
@@ -195,7 +195,7 @@ const Hero = () => {
             onClick={handleFocusInput}
             className="px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 lg:border-r border-[#E3E3E3] cursor-pointer"
           >
-            <div className="flex gap-2 items-center justify-center cursor-pointer">
+            <div className="flex gap-2 items-center justify-center md:justify-start md:pl-10 cursor-pointer">
               <img
                 src={calendar}
                 alt="date"
@@ -214,7 +214,7 @@ const Hero = () => {
 
           {/* Guests */}
           <div className="relative px-4 sm:px-6 py-3 flex-1 w-full border-b lg:border-b-0 border-[#E3E3E3]">
-            <div className="flex gap-2 items-center justify-center md:justify-start md:ml-5">
+            <div className="flex gap-2 items-center justify-center  md:justify-start md:pl-9 ">
               <img src={guest} alt="guests" className="h-4 w-4 sm:h-5 sm:w-5" />
               <span className="text-sm sm:text-[18px] font-[400] text-[#929292]">
                 Guests
